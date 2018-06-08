@@ -1,0 +1,11 @@
+{
+	"watch": [
+		"rutas",
+		"api",
+		"manejadores",
+		"bin",
+		"servidor"
+	],
+	"ext": "ts",
+	"exec": "ts-node servidor"
+}

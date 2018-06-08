@@ -1,0 +1,35 @@
+<!-- <app-page-nav></app-page-nav> -->
+<div class="container">
+    <h1>Ferreteria "Ferroza"</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <form (ngSubmit)="grabar (nomProdFerreteria.value,descripProduc.value,marcaProd.value,precio.value)">
+        <div class="form-group">
+          <label for="nombreProd">Nombre Producto:</label>
+          <input type="text" name="nomProdFerreteria" class="form-control" id="InputProduct" placeholder="Nombre de producto">
+        </div>
+        <div class="form-group">
+          <label for="descripProduc">Descripción:</label>
+          <textarea class="form-control" name="descripProduc" id="descripProduc" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="marcaProd">Marca:</label>
+          <input type="text" class="form-control" name="marcaProd" id="marcaProd" placeholder="Marca de producto">
+        </div>
+        <div class="form-group">
+          <label for="precioProd">Precio:</label>
+          <input type="number" class="form-control" name="precio" id="precioProd" placeholder="Precio de producto">
+        </div>
+        <div class="form-group">
+          <label for="photoFile">Imagen de producto</label>
+          <input type="file" class="form-control-file" name="imagen" id="photoFile">
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-page-footer></app-page-footer>
