@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content">
+          <form #ferreteriaForm="ngForm" (ngSubmit)="addFerreteria(ferreteriaForm)">
+            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="ferreteriaService.selectedFerreteria._id">
+            <div class="row">
+              <div class="input-field col-s12">
+                <input type="text" name="nomProdFerreteria" #nomProdFerreteria="ngModel" [(ngModel)]="ferreteriaService.selectedFerreteria.nomProdFerreteria" placeholder="Ingrese un nombre">
+              </div>
+              <div class="input-field col-s12">
+                <input type="text" name="descripcion" #descripcion="ngModel" [(ngModel)]="ferreteriaService.selectedFerreteria.descripcion" placeholder="Ingrese una descripcion">
+              </div>
+              <div class="input-field col-s12">
+                <input type="text" name="marca" #marca="ngModel" [(ngModel)]="ferreteriaService.selectedFerreteria.marca" placeholder="Ingrese una marca">
+              </div>
+              <div class="input-field col-s12">
+                <input type="number" name="precio" #precio="ngModel" [(ngModel)]="ferreteriaService.selectedFerreteria.precio" value="0" placeholder="Ingrese un precio">
+              </div>
+              <div class="card-action">
+                <div class="input-field col-s12">
+                  <button class="btn right" style="margin-left: 2px;" (click)="resetForm(ferreteriaForm)">Limpiar</button>
+                  <button class="btn right">Guardar</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col s7">
+      <table class="striped highlight black-text">
+        <thead>
+          <th>Producto</th>
+          <th>Descripción</th>
+          <th>Marca</th>
+          <th>Precio</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ferreteria of ferreteriaService.ferreterias">
+            <td>{{ ferreteria.nomProdFerreteria }}</td>
+            <td>{{ ferreteria.descripcion }}</td>
+            <td>{{ ferreteria.marca }}</td>
+            <td>
+              <a (click)="editFerreteria(ferreteria)">
+                <i class="material-icons">edit</i>
+              </a>
+              <a (click)="deleteFerreteria(ferreteria._id, ferreteriaForm)">
+                <i class="material-icons">delete</i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
